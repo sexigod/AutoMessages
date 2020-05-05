@@ -1,14 +1,14 @@
 package br.com.thiagocodero.automessages;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Sound;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 class Text extends CustomConfig {
     final String keys = getConfig().getKeys(true).toString();
@@ -30,9 +30,9 @@ class Text extends CustomConfig {
             List<TextComponent> textComponents = new ArrayList<>();
             for (String word : simpleWord) {
                 TextComponent textComponent;
-                if (word.contains("&h") || word.contains("&u")) {
+                if (word.contains("&h") || word.contains("&u") || word.contains("&p")) {
                     textComponent = new TextComponent();
-                    textComponent.setText(color(word).replaceAll("&h", "").replaceAll("&u", ""));
+                    textComponent.setText(color(word).replaceAll("&h", "").replaceAll("&u", "").replaceAll("&p", ""));
                     if (word.contains("&h")) {
                         String hover = getConfig().getString("AutoMessages." + onlyNumbers.get(i) + ".Hover" + hoverIndex);
                         textComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(color(hover)).create()));
@@ -41,6 +41,10 @@ class Text extends CustomConfig {
                     if (word.contains("&u")) {
                         String url = getConfig().getString("AutoMessages." + onlyNumbers.get(i) + ".URL" + urlIndex);
                         textComponent.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url));
+                        urlIndex++;
+                    } else if (word.contains("&p")) {
+                        String command = getConfig().getString("AutoMessages." + onlyNumbers.get(i) + ".Command" + urlIndex);
+                        textComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, command));
                         urlIndex++;
                     }
                 } else {

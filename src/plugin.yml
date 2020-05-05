@@ -1,5 +1,5 @@
-api-version: "1.15"
+api-version: "1.13"
 author: "Thiago 'Coder' Silva"
 main: "br.com.thiagocodero.automessages.AutoMessages"
 name: "AutoMessages"
-version: "1.0.0"
+version: "1.0.1"

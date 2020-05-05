@@ -1,8 +1,8 @@
 package br.com.thiagocodero.automessages;
 
-import org.bukkit.plugin.java.JavaPlugin;
-
 import java.io.IOException;
+
+import org.bukkit.plugin.java.JavaPlugin;
 
 public class AutoMessages extends JavaPlugin {
     @Override

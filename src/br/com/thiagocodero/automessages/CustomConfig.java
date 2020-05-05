@@ -41,24 +41,30 @@ abstract class CustomConfig {
             Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(configFile), StandardCharsets.UTF_8));
             writer.write("AutoMessages:\n" +
                     "\n" +
-                    "  #18000 ticks = 15 minutes\n" +
-                    "  DelayInTicks: 200\n" +
+                    "  StartDelayInSeconds: 10\n" +
                     "\n" +
+                    "  DelayInSeconds: 10\n" +
+                    "  \n" +
                     "  '1':\n" +
-                    "    Text: '&hHover1Exemple1 &h&uHover2WithURL1Exemple1'\n" +
-                    "    Hover1: Hover1Exemple1\n" +
-                    "    Hover2: Hover2WithURL1Exemple1\n" +
+                    "    Text: '&hHover1_Example1 &h&u&lHover2_With_URL1_Example1'\n" +
+                    "    Hover1: 'Hover1_Example1'\n" +
+                    "    Hover2: '&lFollow &4&l<3'\n" +
                     "    URL1: https://github.com/thiagocodero\n" +
                     "    Sound: UI_TOAST_IN\n" +
                     "\n" +
                     "  '2':\n" +
-                    "    Text: '&b&lColoured &h&a&lHover&c&l1&eExemple&c2 &h&u&3&lHover&62&d&lWith&5&lURL&61&9&lExemple&62 &h&u&3&lHover&63&d&lWith&2&lURL&c2&4&lExemple&62'\n" +
-                    "    Hover1: '&a&lHover&c&l1&eExemple&c2'\n" +
-                    "    Hover2: '&3&lHover&62&d&lWith&5&lURL&61&9&lExemple&62'\n" +
-                    "    Hover3: '&3&lHover&63&d&lWith&2&lURL&c2&4&lExemple&62'\n" +
+                    "    Text: '&b&lColoured &h&a&lHover1&r_&e&lExample2 &h&u&3&lHover2&r_&d&lWith&r_&5&lURL1&r_&9&lExample2 &h&u&3&lHover3&r_&d&lWith&r_&2&lURL2&r_&4&lExample2'\n" +
+                    "    Hover1: '&a&lHover1&r_&e&lExample2'\n" +
+                    "    Hover2: '&a&lJoin us!'\n" +
+                    "    Hover3: '&3&lHover3&r_&d&lWith&r_&2&lURL2&r_&4&lExample2'\n" +
                     "    URL1: https://discord.gg/GUpt8Ex\n" +
                     "    URL2: https://github.com/thiagocodero/AutoMessages\n" +
-                    "    Sound: ENTITY_PLAYER_LEVELUP");
+                    "    Sound: UI_TOAST_IN\n" +
+                    "    \n" +
+                    "  '3':\n" +
+                    "    Text: '&h&p&4&lHover1&r_&b&lWith&r_&6&lCommand&r_&c&lExample1'\n" +
+                    "    Hover1: '&e&lClick to run command'\n" +
+                    "    Command1: /pl");
             writer.flush();
             writer.close();
         } catch (IOException e) {
