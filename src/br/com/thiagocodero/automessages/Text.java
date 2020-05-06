@@ -56,7 +56,7 @@ class Text extends CustomConfig {
                     textComponents.add(new TextComponent("\n"));
                 }
             }
-            ComponentBuilder componentBuilder = new ComponentBuilder();
+            ComponentBuilder componentBuilder = new ComponentBuilder("");
             for (TextComponent textComponent2 : textComponents) {
                 componentBuilder.reset().append(textComponent2).append(" ");
             }

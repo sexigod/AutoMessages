@@ -41,15 +41,29 @@ abstract class CustomConfig {
             Writer writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(configFile), StandardCharsets.UTF_8));
             writer.write("AutoMessages:\n" +
                     "\n" +
+                    "#Time to start the automessages task\n" +
                     "  StartDelayInSeconds: 10\n" +
                     "\n" +
+                    "#Delay in Seconds to wait until the next message show\n" +
                     "  DelayInSeconds: 10\n" +
                     "  \n" +
+                    "#Message to show in it's time\n" +
                     "  '1':\n" +
+                    "  \n" +
+                    "#&h = has hover\n" +
+                    "#&u = has url\n" +
                     "    Text: '&hHover1_Example1 &h&u&lHover2_With_URL1_Example1'\n" +
+                    "    \n" +
+                    "#1st Hovered text by the 1st \"&h\" word occurrence\n" +
                     "    Hover1: 'Hover1_Example1'\n" +
+                    "    \n" +
+                    "#2nd Hovered text by the 2nd \"&h\" word occurrence\n" +
                     "    Hover2: '&lFollow &4&l<3'\n" +
+                    "    \n" +
+                    "#1st URL link by the 1st \"&u\" word occurrence\n" +
                     "    URL1: https://github.com/thiagocodero\n" +
+                    "    \n" +
+                    "#Sound to play when message appear\n" +
                     "    Sound: UI_TOAST_IN\n" +
                     "\n" +
                     "  '2':\n" +
@@ -62,9 +76,12 @@ abstract class CustomConfig {
                     "    Sound: UI_TOAST_IN\n" +
                     "    \n" +
                     "  '3':\n" +
+                    "#&p = has player command\n" +
                     "    Text: '&h&p&4&lHover1&r_&b&lWith&r_&6&lCommand&r_&c&lExample1'\n" +
                     "    Hover1: '&e&lClick to run command'\n" +
-                    "    Command1: /pl");
+                    "#1st Player Command to run when clicked by the 1st \"&p\" word occurrence\n" +
+                    "    Command1: /pl\n" +
+                    "    ");
             writer.flush();
             writer.close();
         } catch (IOException e) {
