@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class AutoMessages extends JavaPlugin {
     @Override
     public void onEnable() {
+        getCommand("am").setExecutor(new Commands());
         try {
             CustomConfig.createFiles();
         } catch (IOException e) {
@@ -15,6 +16,6 @@ public class AutoMessages extends JavaPlugin {
         CustomConfig.load();
         getServer().getConsoleSender().sendMessage(CustomConfig.color("&aAutoMessages enabled!"));
         PrintTask.start();
-        new Text().get();
+        Text.get();
     }
 }

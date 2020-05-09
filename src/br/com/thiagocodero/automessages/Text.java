@@ -11,11 +11,11 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Sound;
 
 class Text extends CustomConfig {
-    final String keys = getConfig().getKeys(true).toString();
-    final String[] subsKeys = keys.replaceAll("AutoMessages\\.", "").replaceAll("[]\\[]", "").split(", ");
-    final List<Integer> onlyNumbers = new ArrayList<>();
+    static final String keys = getConfig().getKeys(true).toString();
+    static final String[] subsKeys = keys.replaceAll("AutoMessages\\.", "").replaceAll("[]\\[]", "").split(", ");
+    static final List<Integer> onlyNumbers = new ArrayList<>();
 
-    void get() {
+   static void get() {
         for (String number : subsKeys) {
             if (number.matches("[0-9]{1,2}")) {
                 onlyNumbers.add(Integer.parseInt(number));
@@ -66,8 +66,6 @@ class Text extends CustomConfig {
                 PrintTask.sounds.add(Sound.valueOf(sound));
             }
             PrintTask.componentBuilders.add(componentBuilder);
-            PrintTask.bukkitTask.cancel();
-            PrintTask.start();
         }
     }
 }

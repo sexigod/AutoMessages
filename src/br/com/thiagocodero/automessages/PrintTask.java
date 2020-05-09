@@ -14,11 +14,12 @@ class PrintTask extends CustomConfig {
     static BukkitTask bukkitTask;
     static List<ComponentBuilder> componentBuilders = new ArrayList<>();
     static List<Sound> sounds = new ArrayList<>();
-    static String delay = getConfig().getString("AutoMessages.StartDelayInSeconds");
-    static String period = getConfig().getString("AutoMessages.DelayInSeconds");
+
     static int count;
 
     static void start() {
+        String delay = getConfig().getString("AutoMessages.StartDelayInSeconds");
+        String period = getConfig().getString("AutoMessages.DelayInSeconds");
         bukkitTask = new BukkitRunnable() {
             @Override
             public void run() {
