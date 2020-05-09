@@ -16,6 +16,9 @@ class Text extends CustomConfig {
     static final List<Integer> onlyNumbers = new ArrayList<>();
 
    static void get() {
+       PrintTask.componentBuilders.clear();
+       PrintTask.sounds.clear();
+
         for (String number : subsKeys) {
             if (number.matches("[0-9]{1,2}")) {
                 onlyNumbers.add(Integer.parseInt(number));
